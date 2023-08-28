@@ -10,6 +10,19 @@ function updateTime() {
     toykoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
     toykoTimeElement.innerHTML = `${tokyoTime.format(`HH:mm:ss`)}`;
   }
+
+  //seoul
+
+  let seoulElement = document.querySelector("#Seoul");
+  if (seoulElement) {
+    let seoulDateElement = seoulElement.querySelector(".date");
+    let seoulTimeElement = seoulElement.querySelector(".time");
+    let seoulTime = moment().tz("Asia/Seoul");
+
+    seoulDateElement.innerHTML = seoulTime.format("MMMM Do YYYY");
+    seoulTimeElement.innerHTML = `${seoulTime.format(`HH:mm:ss`)}`;
+  }
+
   //paris
 
   let parisElement = document.querySelector("#Paris");
@@ -20,6 +33,18 @@ function updateTime() {
 
     parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
     parisTimeElement.innerHTML = `${parisTime.format(`HH:mm:ss`)}`;
+  }
+
+  //madeira
+
+  let madeiraElement = document.querySelector("#Madeira");
+  if (madeiraElement) {
+    let madeiraDateElement = madeiraElement.querySelector(".date");
+    let madeiraTimeElement = madeiraElement.querySelector(".time");
+    let madeiraTime = moment().tz("Europe/Moscow");
+
+    madeiraDateElement.innerHTML = madeiraTime.format("MMMM Do YYYY");
+    madeiraTimeElement.innerHTML = `${madeiraTime.format(`HH:mm:ss`)}`;
   }
 }
 
@@ -37,7 +62,8 @@ function updateCity(event) {
             <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="time">${cityTime.format(`HH:mm:ss`)}</div>
-        </div>`;
+        </div>
+        <a href = "/">Back</a>`;
 }
 
 updateTime();
